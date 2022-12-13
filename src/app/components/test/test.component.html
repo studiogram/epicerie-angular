@@ -1,6 +1,14 @@
 <p>
+  <!-- Appel d'une propriété de mon typescript : -->
   {{ title }} test works! <br />
   {{ price }} h.t. <br />
+  <!-- Il s'agit d'une méthode, pensez aux parenthèses!: -->
   {{ priceTTC(price) }} t.t.c.
-  {{ random() }}
+
+  <!-- L'attribut disabled est rendu dynamique avec les crochets: -->
+  {{ !more }}
+  <button (mouseenter)="loadMore()" [disabled]="more != true">
+    Afficher plus
+  </button>
+  <button (click)="loadMore()" [disabled]="!more">Afficher plus</button>
 </p>
