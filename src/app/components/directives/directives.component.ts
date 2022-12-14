@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
 })
 export class DirectivesComponent {
   colorTS: string = '#ff0000';
-  valid: boolean = true;
+  valid: boolean = false;
+  animaux: string[] = ['chien', 'chat', 'koala']
+  animauxObjet: {name: string, quantity: number}[] = [
+    {name: 'chien', quantity: 10}, 
+    {name: 'chat', quantity: 4}, 
+    {name: 'koala', quantity: 6}, 
+  ]
 }

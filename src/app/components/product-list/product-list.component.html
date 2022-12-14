@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-center">Liste de nos produits</h1>
+
+  <div class="row">
+    <div *ngFor="let produit of produits" class="col-md-3 mt-4">
+      <div class="card" [ngClass]="{ 'bg-danger-light': produit.stock < 5 }">
+        <img
+          class="card-img-top"
+          src="{{ produit.img }}"
+          alt="{{ produit.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ produit.name }}</h5>
+
+          <p class="card-text" [ngClass]="{ 'text-danger': produit.stock < 5 }">
+            <span *ngIf="produit.stock >= 5; else lowStock"> En stock </span>
+            <ng-template #lowStock>
+              <span>Stock faible</span>
+            </ng-template>
+            ({{ produit.stock }})
+          </p>
+
+          <p class="card-text">{{ produit.price }}€</p>
+          <a class="btn btn-secondary d-block mt-4">Modifier</a>
+          <button class="btn btn-danger d-block mt-2 w-100">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

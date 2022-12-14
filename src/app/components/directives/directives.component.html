@@ -1,3 +1,17 @@
 <p [ngStyle]="{ color: colorTS }">directives works!</p>
 <p [ngStyle]="{ color: valid ? 'green' : 'red' }">directives boolean!</p>
 <p [ngClass]="{ 'text-success': valid == true }">directives boolean!</p>
+
+<!-- Directives structurelles conditionnelles : -->
+<p *ngIf="valid == true; else nonvalid">Validé</p>
+<ng-template #nonvalid>
+  <h1>Non validé</h1>
+</ng-template>
+
+<!-- Directives structurelles de boucles : -->
+<p *ngFor="let animal of animaux">{{ animal }}</p>
+<p *ngFor="let animal of animauxObjet">
+  {{ animal.name }} ({{ animal.quantity }})
+  {{ animal.name + "(" + animal.quantity + ")" }}
+</p>
+<p *ngFor="let animal of animaux; let i = index">{{ animal }} {{ i }}</p>
