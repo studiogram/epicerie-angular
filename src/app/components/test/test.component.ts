@@ -14,7 +14,9 @@ export class TestComponent {
   constructor() {
     new Fruits;
     console.log("test");
-    if(this.total > 3) this.more = true;
+    if(this.total > 3) {
+      this.more = true;
+    }
   }
   priceTTC(priceExcl: number) {
     return priceExcl * 1.2;
