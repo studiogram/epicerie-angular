@@ -13,6 +13,10 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 
+import { AnimauxService } from './services/animaux.service';
+import { ServicesComponent } from './components/services/services.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +25,13 @@ registerLocaleData(localeFr, 'fr');
     DirectivesComponent,
     ProductListComponent,
     PipesComponent,
+    ServicesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ {provide: LOCALE_ID, useValue: "fr-FR" } ],
+  providers: [ AnimauxService,{provide: LOCALE_ID, useValue: "fr-FR" } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
