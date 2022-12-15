@@ -16,6 +16,10 @@ registerLocaleData(localeFr, 'fr');
 import { AnimauxService } from './services/animaux.service';
 import { ServicesComponent } from './components/services/services.component';
 import { RoutingComponent } from './components/routing/routing.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { ErrorComponent } from './components/error/error.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 @NgModule({
@@ -28,6 +32,10 @@ import { RoutingComponent } from './components/routing/routing.component';
     PipesComponent,
     ServicesComponent,
     RoutingComponent,
+    ProductAddComponent,
+    ProductUpdateComponent,
+    ErrorComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

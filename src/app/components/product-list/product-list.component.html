@@ -3,7 +3,6 @@
 
   <div class="row">
     <div *ngFor="let produit of produits; let i = index" class="col-md-3 mt-4">
-      {{ i }}
       <div class="card" [ngClass]="{ 'bg-danger-light': produit.stock < 5 }">
         <img
           class="card-img-top"
@@ -23,7 +22,11 @@
           </p>
 
           <p class="card-text">{{ produit.price }}€</p>
-          <a class="btn btn-secondary d-block mt-4">Modifier</a>
+          <a
+            [routerLink]="['/produits', i]"
+            class="btn btn-secondary d-block mt-4"
+            >Modifier</a
+          >
           <button
             class="btn btn-danger d-block mt-2 w-100"
             (click)="deleteProduit(i)"
