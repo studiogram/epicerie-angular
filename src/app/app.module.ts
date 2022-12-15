@@ -15,6 +15,7 @@ registerLocaleData(localeFr, 'fr');
 
 import { AnimauxService } from './services/animaux.service';
 import { ServicesComponent } from './components/services/services.component';
+import { RoutingComponent } from './components/routing/routing.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ServicesComponent } from './components/services/services.component';
     ProductListComponent,
     PipesComponent,
     ServicesComponent,
+    RoutingComponent,
   ],
   imports: [
     BrowserModule,
