@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +7,11 @@ import { TestComponent } from './components/test/test.component';
 import { AssetsComponent } from './components/assets/assets.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
@@ -15,12 +20,13 @@ import { ProductListComponent } from './components/product-list/product-list.com
     AssetsComponent,
     DirectivesComponent,
     ProductListComponent,
+    PipesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ {provide: LOCALE_ID, useValue: "fr-FR" } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

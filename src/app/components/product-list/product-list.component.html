@@ -10,7 +10,8 @@
           alt="{{ produit.name }}"
         />
         <div class="card-body">
-          <h5 class="card-title">{{ produit.name }}</h5>
+          <h5 class="card-title">{{ produit.name | uppercase }}</h5>
+          {{ produit.name }}
 
           <p class="card-text" [ngClass]="{ 'text-danger': produit.stock < 5 }">
             <span *ngIf="produit.stock >= 5; else lowStock"> En stock </span>
