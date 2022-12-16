@@ -19,6 +19,10 @@ export class ProduitsService {
     return this.produits;
   }
 
+  readProduit(id: number) {
+    return this.produits[id];
+  }
+
   deleteProduit(i: number) {
     console.log(i);
     console.log(this.produits);
