@@ -11,6 +11,8 @@ import { ProduitsService } from 'src/app/services/produits.service';
 export class ProductUpdateComponent implements OnInit{
   id: number = this.activatedRoute.snapshot.params['numero'];
   produit: Produit = this._produits.readProduit(this.id);
+  success: string = '';
+
   constructor(
     private activatedRoute: ActivatedRoute, 
     private _produits: ProduitsService,
@@ -23,5 +25,9 @@ export class ProductUpdateComponent implements OnInit{
   }
   ngOnInit(): void {
 
+  }
+
+  onSuccess(message: string) {
+    this.success = message;
   }
 }

@@ -23,6 +23,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { FormulaireComponent } from './components/formulaire/formulaire.component';
 import { FormsModule } from '@angular/forms';
+import { ProductAddFormComponent } from './components/product-add-form/product-add-form.component';
+import { ProductUpdateFormComponent } from './components/product-update-form/product-update-form.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { FormsModule } from '@angular/forms';
     MenuComponent,
     ProductCardComponent,
     FormulaireComponent,
+    ProductAddFormComponent,
+    ProductUpdateFormComponent,
   ],
   imports: [
     BrowserModule,

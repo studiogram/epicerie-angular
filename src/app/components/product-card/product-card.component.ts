@@ -8,10 +8,13 @@ import { ProduitsService } from 'src/app/services/produits.service';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit{
-  @Input() produit: Produit;
+  // @Input() produit: Produit;
   @Input() i: number;
+  produit: Produit;
   constructor(private _produits: ProduitsService) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.produit = this._produits.readProduit(this.i);
+  }
   deleteProduit(i: number) {
     this._produits.deleteProduit(i);
   }

@@ -26,4 +26,12 @@ export class ProduitsService {
   deleteProduit(i: number) {
     this.produits.splice(i, 1);
   }
+
+  createProduit(produit: Produit) {
+    this.produits.push(produit);
+  }
+
+  updateProduit(id: number, produit: Produit) {
+    this.produits.splice(id, 1, produit);
+  }
 }

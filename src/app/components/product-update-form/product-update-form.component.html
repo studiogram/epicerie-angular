@@ -1,0 +1,87 @@
+<div class="card">
+  <form
+    class="card-body"
+    #produitForm="ngForm"
+    (ngSubmit)="onSubmit(produitForm)"
+  >
+    <div class="mb-3">
+      <p
+        class="text-danger"
+        *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)"
+      >
+        Ce champ a une erreur :
+      </p>
+      <label class="form-label">Nom :</label>
+      <input
+        type="text"
+        class="form-control"
+        minlength="3"
+        required
+        name="name"
+        #nameInput="ngModel"
+        [(ngModel)]="produit.name"
+      />
+    </div>
+    <div class="mb-3">
+      <p
+        class="text-danger"
+        *ngIf="imgInput.invalid && (imgInput.dirty || imgInput.touched)"
+      >
+        Ce champ a une erreur :
+      </p>
+      <label class="form-label">Image :</label>
+      <input
+        type="text"
+        class="form-control"
+        minlength="3"
+        required
+        name="img"
+        #imgInput="ngModel"
+        [(ngModel)]="produit.img"
+      />
+    </div>
+
+    <div class="mb-3">
+      <p
+        class="text-danger"
+        *ngIf="priceInput.invalid && (priceInput.dirty || priceInput.touched)"
+      >
+        Ce champ a une erreur :
+      </p>
+      <label class="form-label">Prix :</label>
+      <input
+        type="number"
+        class="form-control"
+        required
+        name="price"
+        #priceInput="ngModel"
+        [(ngModel)]="produit.price"
+      />
+    </div>
+    <div class="mb-3">
+      <p
+        class="text-danger"
+        *ngIf="stockInput.invalid && (stockInput.dirty || stockInput.touched)"
+      >
+        Ce champ a une erreur :
+      </p>
+      <label class="form-label">Stock :</label>
+      <input
+        type="number"
+        class="form-control"
+        required
+        name="stock"
+        #stockInput="ngModel"
+        [(ngModel)]="produit.stock"
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary w-100"
+      [disabled]="produitForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

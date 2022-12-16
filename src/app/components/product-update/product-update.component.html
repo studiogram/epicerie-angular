@@ -1,1 +1,12 @@
-<p>product-update works! je veux mon index : {{ produit.name }}</p>
+<div class="container">
+  <h1 class="text-center">Modifier un produit</h1>
+  <p class="text-success text-center">{{ success }}</p>
+  <div class="row justify-center">
+    <app-product-update-form
+      class="col-lg-4"
+      [id]="id"
+      [produit]="produit"
+      (successCreateProduit)="onSuccess($event)"
+    ></app-product-update-form>
+  </div>
+</div>

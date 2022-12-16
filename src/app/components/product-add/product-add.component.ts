@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-add.component.scss']
 })
 export class ProductAddComponent {
-
+  success: string = '';
+  onSuccess(message: string) {
+    this.success = message;
+  }
 }
