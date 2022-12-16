@@ -13,6 +13,6 @@ export class DirectivesComponent {
   animauxObjet: Animal[] = [
     {name: 'chien', quantity: 10}, 
     {name: 'chat', quantity: 4}, 
-    {name: 'koala', quantity: 6}, 
+    {name: 'koala', quantity: 6},
   ]
 }
