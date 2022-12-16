@@ -6,42 +6,14 @@
     <app-product-card
       *ngFor="let produit of produits; let i = index"
       class="col-md-3 mt-4"
-      [id]="i"
+      [produit]="produit"
+      [i]="i"
     >
     </app-product-card>
-    <div *ngFor="let produit of produits; let i = index" class="col-md-3 mt-4">
-      <div class="card" [ngClass]="{ 'bg-danger-light': produit.stock < 5 }">
-        <img
-          class="card-img-top"
-          src="{{ produit.img }}"
-          alt="{{ produit.name }}"
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{ produit.name | uppercase }}</h5>
-          {{ produit.name }}
 
-          <p class="card-text" [ngClass]="{ 'text-danger': produit.stock < 5 }">
-            <span *ngIf="produit.stock >= 5; else lowStock"> En stock </span>
-            <ng-template #lowStock>
-              <span>Stock faible</span>
-            </ng-template>
-            ({{ produit.stock }})
-          </p>
-
-          <p class="card-text">{{ produit.price }}€</p>
-          <a
-            [routerLink]="['/produits', i]"
-            class="btn btn-secondary d-block mt-4"
-            >Modifier</a
-          >
-          <button
-            class="btn btn-danger d-block mt-2 w-100"
-            (click)="deleteProduit(i)"
-          >
-            Supprimer
-          </button>
-        </div>
-      </div>
-    </div>
+    <div
+      *ngFor="let produit of produits; let i = index"
+      class="col-md-3 mt-4"
+    ></div>
   </div>
 </div>
