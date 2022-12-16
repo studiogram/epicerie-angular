@@ -21,6 +21,8 @@ import { ProductUpdateComponent } from './components/product-update/product-upda
 import { ErrorComponent } from './components/error/error.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { FormulaireComponent } from './components/formulaire/formulaire.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -38,10 +40,12 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     ErrorComponent,
     MenuComponent,
     ProductCardComponent,
+    FormulaireComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule
   ],
   providers: [ AnimauxService,{provide: LOCALE_ID, useValue: "fr-FR" } ],
   bootstrap: [AppComponent]

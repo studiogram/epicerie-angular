@@ -1,0 +1,45 @@
+<div class="card">
+  <form class="card-body" #...="ngForm" (ngSubmit)="onSubmit(...)">
+    <div class="mb-3">
+      <p class="text-danger" *ngIf="...">Ce champ a une erreur :</p>
+      <label class="form-label">Nom :</label>
+      <input
+        type="text"
+        class="form-control"
+        minlength="3"
+        required
+        name="..."
+        #...="ngModel"
+        ngModel
+      />
+    </div>
+    <div class="mb-3">
+      <p class="text-danger" *ngIf="...">Ce champ a une erreur :</p>
+      <label class="form-label">Prix :</label>
+      <input
+        type="number"
+        class="form-control"
+        required
+        name="..."
+        #...="ngModel"
+        ngModel
+      />
+    </div>
+    <div class="mb-3">
+      <p class="text-danger" *ngIf="...">Ce champ a une erreur :</p>
+      <label class="form-label">Stock :</label>
+      <input
+        type="number"
+        class="form-control"
+        required
+        name="..."
+        #...="ngModel"
+        ngModel
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100" [disabled]="...">
+      Submit
+    </button>
+  </form>
+</div>

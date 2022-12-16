@@ -24,9 +24,6 @@ export class ProduitsService {
   }
 
   deleteProduit(i: number) {
-    console.log(i);
-    console.log(this.produits);
     this.produits.splice(i, 1);
-    console.log(this.produits);
   }
 }

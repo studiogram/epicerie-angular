@@ -1,0 +1,8 @@
+<p>{{ name }}</p>
+
+<form #animalForm="ngForm" (ngSubmit)="onSubmit(animalForm)">
+  <input type="text" name="animal" ngModel />
+  <input type="text" name="autre" ngModel />
+  <input type="text" name="test" [(ngModel)]="name" />
+  <button type="submit">Envoyer</button>
+</form>
