@@ -18,7 +18,7 @@ export class ProductUpdateComponent implements OnInit{
   ) {
     console.log(this.activatedRoute.snapshot.params['numero']);
     if(!this.produit) {
-      this.router.navigate(['produits']);
+      this.router.navigate(['produits'], {queryParams: {noproduct: true}});
     }
   }
   ngOnInit(): void {

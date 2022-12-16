@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Produit } from 'src/app/interfaces/produit';
 import { ProduitsService } from 'src/app/services/produits.service';
 
@@ -10,9 +11,13 @@ import { ProduitsService } from 'src/app/services/produits.service';
 export class ProductListComponent implements OnInit{
   
   produits: Produit[] = [];
-  constructor(private _produits: ProduitsService) {}
+  error: string = '';
+  constructor(private _produits: ProduitsService, private activatedRoute: ActivatedRoute) {}
   ngOnInit(): void {
     this.produits = this._produits.readProduits();
+    if(this.activatedRoute.snapshot.queryParams['noproduct']) {
+      this.error = 'Ce produit n\'existe pas'
+    }
   }
   deleteProduit(i: number) {
     this._produits.deleteProduit(i);
